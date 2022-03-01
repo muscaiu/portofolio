@@ -15,4 +15,25 @@ export default () => {
     </Layout>
   )
 }
-// ...GatsbyImageSharpFluid
+
+// const query = graphql`
+//   {
+//     allStrapiProjects(
+//       filter: {
+//         data: { elemMatch: { attributes: { featured: { eq: true } } } }
+//       }
+//     ) {
+//       nodes {
+//         data {
+//           attributes {
+//             description
+//             github
+//             title
+//             url
+//             featured
+//           }
+//         }
+//       }
+//     }
+//   }
+// `

@@ -6,16 +6,16 @@ import { Link } from "gatsby"
 
 const query = graphql`
   {
-    allStrapiJobs(sort: { fields: id, order: ASC }) {
+    __typename
+    allStrapiJobs(filter: { featured: { eq: true } }) {
       nodes {
-        data {
-          id
-          attributes {
-            company
-            date
-            position
-          }
+        company
+        featured
+        job_description {
+          desc
         }
+        position
+        date
       }
     }
   }
@@ -23,20 +23,20 @@ const query = graphql`
 
 const Jobs = () => {
   const [value, setValue] = useState(0)
+  console.log("value:", value)
   const {
     allStrapiJobs: { nodes },
   } = useStaticQuery(query)
 
-  const { data } = nodes[0]
-  const all = data.map(item => item.attributes)
-  const { company, position, date } = all[value]
+  const { company, position, date, job_description } = nodes[value]
+  console.log("date:", date)
 
   return (
     <section className="section jobs">
       <Title title="experience" />
       <div className="jobs-center">
         <div className="btn-container">
-          {all.map((item, index) => {
+          {nodes.map((item, index) => {
             return (
               <button
                 key={index}
@@ -52,11 +52,12 @@ const Jobs = () => {
           <h3>{position}</h3>
           <h3>{company}</h3>
           <p className="job-date">{date}</p>
-          {/* {desc.map((item, index) => (
+          {job_description.map(({ desc }, index) => (
             <div key={index} className="job-desc">
+              <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
+              {desc}
             </div>
-          ))} */}
-          <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
+          ))}
         </article>
       </div>
       <Link to="about" className="btn center-btn">
