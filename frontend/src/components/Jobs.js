@@ -23,13 +23,11 @@ const query = graphql`
 
 const Jobs = () => {
   const [value, setValue] = useState(0)
-  console.log("value:", value)
   const {
     allStrapiJobs: { nodes },
   } = useStaticQuery(query)
 
   const { company, position, date, job_description } = nodes[value]
-  console.log("date:", date)
 
   return (
     <section className="section jobs">
