@@ -9,7 +9,7 @@ const Project = ({ description, title, github, url, image, stack, index }) => {
     <article className="project">
       <Image fluid={image.childImageSharp.fluid} className="project-img" />
       <div className="project-info">
-        <div className="project-number">0{index + 1}</div>
+        <div className="project-number">0{index + 1}.</div>
         <h3>{title}</h3>
         <p className="project-desc">{description}</p>
         <div className="project-stack">
