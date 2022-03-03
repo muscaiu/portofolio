@@ -2,12 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import Image from "gatsby-image"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
-import { graphql, useStaticQuery } from "gatsby"
 
 const Project = ({ description, title, github, url, image, stack, index }) => {
   return (
     <article className="project">
-      <Image fluid={image.childImageSharp.fluid} className="project-img" />
+      {image && (
+        <Image fluid={image.childImageSharp.fluid} className="project-img" />
+      )}
       <div className="project-info">
         <div className="project-number">0{index + 1}.</div>
         <h3>{title}</h3>
@@ -30,6 +31,12 @@ const Project = ({ description, title, github, url, image, stack, index }) => {
   )
 }
 
-Project.propTypes = {}
+Project.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  stack: PropTypes.arrayOf(PropTypes.object).isRequired,
+}
 
 export default Project
