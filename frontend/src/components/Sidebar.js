@@ -9,8 +9,8 @@ const Sidebar = ({ isSidebarOpen, toggleSidebar }) => {
         <FaTimes />
       </button>
       <div className="side-container">
-        <Links styleClass="sidebar-links" />
-        <SocialLinks styleClass="sidebar-icons" />
+        <Links styleClass={`${isSidebarOpen ? "sidebar-links" : ""}`} />
+        <SocialLinks styleClass={`${isSidebarOpen ? "sidebar-icons" : ""}`} />
       </div>
     </aside>
   )
