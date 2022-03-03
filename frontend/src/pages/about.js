@@ -9,7 +9,6 @@ const About = ({ data }) => {
     allStrapiAbout: { nodes: about },
   } = data
   const { stack, title, image, info } = about[0]
-  console.log("stack:", stack)
 
   return (
     <Layout>
