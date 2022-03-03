@@ -8,7 +8,6 @@ const Blog = ({
     allStrapiBlogs: { nodes: blogs },
   },
 }) => {
-  console.log("blogs:", blogs)
   return (
     <Layout>
       <section className="blog-page">
