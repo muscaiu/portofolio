@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Title from "./Title"
-import { FaAlignRight, FaAngleDoubleRight } from "react-icons/fa"
+import { FaAngleDoubleRight } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 
@@ -58,7 +58,7 @@ const Jobs = () => {
           ))}
         </article>
       </div>
-      <Link to="about" className="btn center-btn">
+      <Link to="/about" className="btn center-btn">
         more info
       </Link>
     </section>
