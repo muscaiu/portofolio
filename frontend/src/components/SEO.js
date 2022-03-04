@@ -37,9 +37,12 @@ const SEO = ({ title, description }) => {
       <meta name="description" content={description || siteDesc} />
       <meta name="image" content={image} />
       <meta name="author" content={author} />
-      <meta name="author" content={author} />
-      <meta name="siteUrl" content={siteUrl} />
-      <meta name="twitterUsername" content={twitterUsername} />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={twitterUsername} />
+      <meta name="twitter:title" content={siteTitle} />
+      <meta name="twitter:description" content={siteDesc} />
+      <meta name="twitter:image" content={`${siteUrl}${image}`} />
     </Helmet>
   )
 }
