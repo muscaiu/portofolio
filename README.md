@@ -18,3 +18,7 @@
 # Issues:
 
 - gatsby-source-strapi doesn't work well with strapi v4
+
+# Plans
+
+- remake FE with Typescript and Strapi v3
