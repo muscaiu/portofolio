@@ -3,7 +3,7 @@
     {
       "method": "GET",
       "path": "/jobs",
-      "handler": "job.find",
+      "handler": "jobs.find",
       "config": {
         "policies": []
       }
@@ -11,7 +11,7 @@
     {
       "method": "GET",
       "path": "/jobs/count",
-      "handler": "job.count",
+      "handler": "jobs.count",
       "config": {
         "policies": []
       }
@@ -19,7 +19,7 @@
     {
       "method": "GET",
       "path": "/jobs/:id",
-      "handler": "job.findOne",
+      "handler": "jobs.findOne",
       "config": {
         "policies": []
       }
@@ -27,7 +27,7 @@
     {
       "method": "POST",
       "path": "/jobs",
-      "handler": "job.create",
+      "handler": "jobs.create",
       "config": {
         "policies": []
       }
@@ -35,7 +35,7 @@
     {
       "method": "PUT",
       "path": "/jobs/:id",
-      "handler": "job.update",
+      "handler": "jobs.update",
       "config": {
         "policies": []
       }
@@ -43,7 +43,7 @@
     {
       "method": "DELETE",
       "path": "/jobs/:id",
-      "handler": "job.delete",
+      "handler": "jobs.delete",
       "config": {
         "policies": []
       }

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Title from "./Title"
-import { FaAngleDoubleRight } from "react-icons/fa"
+// import { FaAngleDoubleRight } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 
@@ -11,9 +11,9 @@ const query = graphql`
       nodes {
         company
         featured
-        job_description {
-          desc
-        }
+        # job_description {
+        #   desc
+        # }
         position
         date
       }
@@ -27,7 +27,12 @@ const Jobs = () => {
     allStrapiJobs: { nodes },
   } = useStaticQuery(query)
 
-  const { company, position, date, job_description } = nodes[value]
+  const {
+    company,
+    position,
+    date,
+    // job_description
+  } = nodes[value]
 
   return (
     <section className="section jobs">
@@ -50,12 +55,12 @@ const Jobs = () => {
           <h3>{position}</h3>
           <h3>{company}</h3>
           <p className="job-date">{date}</p>
-          {job_description.map(({ desc }, index) => (
+          {/* {job_description.map(({ desc }, index) => (
             <div key={index} className="job-desc">
               <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
               {desc}
             </div>
-          ))}
+          ))} */}
         </article>
       </div>
       <Link to="/about" className="btn center-btn">
